@@ -23,3 +23,9 @@ All notable changes to `soyhuce/service-provider-registrar` will be documented i
 ### Security
 
 - Nothing
+
+## [0.3.0] - 2020-05-11
+
+### Added
+
+- Register other service providers based on current environment 

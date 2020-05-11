@@ -1,6 +1,6 @@
 # Service provider registrar
 
-![Release](https://img.shields.io/badge/Release-0.0.0-blue.svg)
+![Release](https://img.shields.io/badge/Release-0.3.0-blue.svg)
 
 ## Objectives
 
