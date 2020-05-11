@@ -1,0 +1,35 @@
+{
+    "name": "soyhuce/service-provider-registrar",
+    "description": "Load other service providers based on current environment",
+    "keywords": [
+        "laravel",
+        "service providers",
+        "environment"
+    ],
+    "require": {
+        "php": "^7.4",
+        "illuminate/support": "^6.0|^7.0"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Bastien Philippe",
+            "email": "bastien.philippe@soyhuce.fr"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Soyhuce\\ServiceProviderRegistrar\\": "src/"
+        }
+    },
+    "archive": {
+        "exclude": [
+            ".gitignore",
+            "composer.lock",
+            "vendor"
+        ]
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^2.16"
+    }
+}
