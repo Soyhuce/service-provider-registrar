@@ -1,6 +1,7 @@
 # Service provider registrar
 
-![Release](https://img.shields.io/badge/Release-0.3.0-blue.svg)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/soyhuce/service-provider-registrar.svg?style=flat-square)](https://packagist.org/packages/soyhuce/service-provider-registrar)
+[![Total Downloads](https://img.shields.io/packagist/dt/soyhuce/service-provider-registrar.svg?style=flat-square)](https://packagist.org/packages/soyhuce/service-provider-registrar)
 
 ## Objectives
 
