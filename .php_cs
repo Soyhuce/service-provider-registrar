@@ -1,14 +1,7 @@
 <?php
 
 $finder = Symfony\Component\Finder\Finder::create()
-    ->notPath('docs/*')
-    ->notPath('vendor')
-    ->in([
-        __DIR__.'/src',
-    ])
-    ->name('*.php')
-    ->ignoreDotFiles(true)
-    ->ignoreVCS(true);
+    ->in(['src', 'tests']);
 
 return PhpCsFixer\Config::create()
     ->setRules([
