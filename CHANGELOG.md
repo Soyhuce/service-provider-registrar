@@ -24,6 +24,12 @@ All notable changes to `soyhuce/service-provider-registrar` will be documented i
 
 - Nothing
 
+## [1.0.0] - 2020-08-28
+
+### Added
+
+- Laravel 8 support
+
 ## [0.3.0] - 2020-05-11
 
 ### Added
