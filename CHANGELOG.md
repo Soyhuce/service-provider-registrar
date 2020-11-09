@@ -24,6 +24,12 @@ All notable changes to `soyhuce/service-provider-registrar` will be documented i
 
 - Nothing
 
+## [1.1.0] - 2020-11-09
+
+### Added
+
+- PHP 8 support
+
 ## [1.0.0] - 2020-08-28
 
 ### Added
