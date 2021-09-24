@@ -6,11 +6,13 @@ All notable changes to `soyhuce/service-provider-registrar` will be documented i
 
 ### Added
 
-- Nothing
+- Add phpstan analysis
 
 ### Changed
 
-- Nothing
+- Drop php 7.4 support
+- Drop Laravel 7 support
+- Upgrade dependencies
 
 ### Deprecated
 
