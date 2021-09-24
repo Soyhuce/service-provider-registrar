@@ -14,13 +14,13 @@
         }
     ],
     "require": {
-        "php": "^7.4 || ^8.0",
-        "illuminate/support": "^7.0|^8.0"
+        "php": "^8.0",
+        "illuminate/support": "^8.0"
     },
     "require-dev": {
-        "friendsofphp/php-cs-fixer": "^2.16",
-        "phpunit/phpunit": "^9.3",
-        "orchestra/testbench": "^5.0|^6.0"
+        "bamarni/composer-bin-plugin": "^1.4",
+        "phpunit/phpunit": "^9.5",
+        "orchestra/testbench": "^6.4"
     },
     "autoload": {
         "psr-4": {
@@ -32,17 +32,22 @@
             "Soyhuce\\ServiceProviderRegistrar\\Tests\\": "tests"
         }
     },
-    "archive": {
-        "exclude": [
-            ".gitignore",
-            "composer.lock",
-            "vendor"
-        ]
-    },
     "extra": {
         "branch-alias": {
             "dev-main": "dev-master"
         }
+    },
+    "scripts": {
+        "post-install-cmd": "@composer bin all install --ansi",
+        "post-update-cmd": "@composer bin all update --ansi",
+        "cs": "vendor/bin/php-cs-fixer fix",
+        "test": "vendor/bin/phpunit --config=phpunit.xml",
+        "analyse": "vendor/bin/phpstan analyse",
+        "all": [
+            "@cs",
+            "@test",
+            "@analyse"
+        ]
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
