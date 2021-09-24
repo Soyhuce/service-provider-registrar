@@ -7,6 +7,9 @@ use Soyhuce\ServiceProviderRegistrar\Tests\Fixtures\LocalServiceProvider;
 use Soyhuce\ServiceProviderRegistrar\Tests\Fixtures\Registrar;
 use Soyhuce\ServiceProviderRegistrar\Tests\Fixtures\TestingServiceProvider;
 
+/**
+ * @coversNothing
+ */
 class ServiceProviderTest extends TestCase
 {
     protected function tearDown(): void

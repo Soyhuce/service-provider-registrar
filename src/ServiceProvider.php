@@ -6,9 +6,9 @@ use Illuminate\Support\ServiceProvider as IlluminateServiceProvider;
 
 abstract class ServiceProvider extends IlluminateServiceProvider
 {
-    public function register()
+    public function register(): void
     {
-        $environment = $this->app->environment();
+        $environment = (string) $this->app->environment();
 
         foreach (data_get($this, $environment, []) as $serviceProvider) {
             $this->app->register($serviceProvider);
