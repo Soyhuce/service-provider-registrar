@@ -13,13 +13,9 @@ jobs:
         laravel: [ 8.* ]
         dependency-version: [prefer-lowest, prefer-stable]
         include:
-          - php: 8.0
-            laravel: 8.*
+          - laravel: 8.*
             testbench: ^6.4
-            dependency-version: [prefer-lowest, prefer-stable]
           - php: 8.1
-            laravel: 8.*
-            testbench: ^6.4
             dependency-version: prefer-stable
 
     name: P${{ matrix.php }} - L${{ matrix.laravel }} - ${{ matrix.dependency-version }} - ${{ matrix.os }}
