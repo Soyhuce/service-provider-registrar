@@ -32,11 +32,6 @@
             "Soyhuce\\ServiceProviderRegistrar\\Tests\\": "tests"
         }
     },
-    "extra": {
-        "branch-alias": {
-            "dev-main": "dev-master"
-        }
-    },
     "scripts": {
         "post-install-cmd": "@composer bin all install --ansi",
         "post-update-cmd": "@composer bin all update --ansi",
