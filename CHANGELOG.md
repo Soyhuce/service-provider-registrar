@@ -4,9 +4,12 @@ All notable changes to `soyhuce/service-provider-registrar` will be documented i
 
 ## [Next release] - YYYY-MM-DD
 
+## [1.2.0] - 2022-01-06
+
 ### Added
 
 - Add phpstan analysis
+- Add Laravel 9 support
 
 ### Changed
 
