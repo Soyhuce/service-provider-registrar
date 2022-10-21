@@ -2,6 +2,7 @@
 
 namespace Soyhuce\ServiceProviderRegistrar\Tests\Feature;
 
+use Illuminate\Foundation\Testing\Concerns\InteractsWithDeprecationHandling;
 use Orchestra\Testbench\TestCase;
 use Soyhuce\ServiceProviderRegistrar\Tests\Fixtures\LocalServiceProvider;
 use Soyhuce\ServiceProviderRegistrar\Tests\Fixtures\Registrar;
@@ -12,6 +13,14 @@ use Soyhuce\ServiceProviderRegistrar\Tests\Fixtures\TestingServiceProvider;
  */
 class ServiceProviderTest extends TestCase
 {
+    use InteractsWithDeprecationHandling;
+
+    protected function setUp(): void
+    {
+        parent::setUp();
+        $this->withoutDeprecationHandling();
+    }
+
     protected function tearDown(): void
     {
         TestingServiceProvider::$registered = false;
