@@ -2,6 +2,18 @@
 
 All notable changes to `soyhuce/service-provider-registrar` will be documented in this file
 
+## 1.6.0 - 2024-03-08
+
+### What's Changed
+
+* Laravel 11 support by @ElRochito in https://github.com/Soyhuce/service-provider-registrar/pull/10
+
+### New Contributors
+
+* @ElRochito made their first contribution in https://github.com/Soyhuce/service-provider-registrar/pull/10
+
+**Full Changelog**: https://github.com/Soyhuce/service-provider-registrar/compare/1.5.0...1.6.0
+
 ## [Next release] - YYYY-MM-DD
 
 ### Added
@@ -53,4 +65,4 @@ All notable changes to `soyhuce/service-provider-registrar` will be documented i
 
 ### Added
 
-- Register other service providers based on current environment 
+- Register other service providers based on current environment
