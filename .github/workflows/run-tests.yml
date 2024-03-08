@@ -1,6 +1,10 @@
 name: run-tests
 
-on: [push]
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
 
 jobs:
   test:
@@ -11,14 +15,15 @@ jobs:
         os: [ ubuntu-latest ]
         php: [ 8.2, 8.3 ]
         laravel: [ 10.*, 11.* ]
-        dependency-version: [ prefer-lowest, prefer-stable ]
+        phpunit: [ ^10.0 ]
+        stability: [ prefer-lowest, prefer-stable ]
         include:
-          - laravel: ^10.0
-            testbench: ^8.0
+          - laravel: 10.*
+            testbench: 8.*
           - laravel: 11.*
             testbench: 9.*
 
-    name: P${{ matrix.php }} - L${{ matrix.laravel }} - ${{ matrix.dependency-version }} - ${{ matrix.os }}
+    name: P${{ matrix.php }} - L${{ matrix.laravel }} - PU${{ matrix.phpunit }} - ${{ matrix.dependency-version }} - ${{ matrix.os }}
 
     steps:
       - name: Checkout code
@@ -39,8 +44,8 @@ jobs:
 
       - name: Install dependencies
         run: |
-          composer require "laravel/framework:${{ matrix.laravel }}" "orchestra/testbench:${{ matrix.testbench }}" --no-interaction --no-update --no-scripts
-          composer update --${{ matrix.dependency-version }} --prefer-dist --no-interaction --no-scripts
+          composer require "laravel/framework:${{ matrix.laravel }}" "orchestra/testbench:${{ matrix.testbench }}" "phpunit/phpunit:${{ matrix.phpunit }}"  --no-interaction --no-update
+          composer update --${{ matrix.stability }} --prefer-dist --no-interaction
 
       - name: Execute tests
         run: vendor/bin/phpunit
