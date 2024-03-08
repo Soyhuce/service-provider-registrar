@@ -14,28 +14,6 @@ All notable changes to `soyhuce/service-provider-registrar` will be documented i
 
 **Full Changelog**: https://github.com/Soyhuce/service-provider-registrar/compare/1.5.0...1.6.0
 
-## [Next release] - YYYY-MM-DD
-
-### Added
-
-- Nothing
-
-### Changed
-
-- Nothing
-
-### Deprecated
-
-- Nothing
-
-### Fixed
-
-- Nothing
-
-### Security
-
-- Nothing
-
 ## [1.2.0] - 2022-01-06
 
 ### Added
