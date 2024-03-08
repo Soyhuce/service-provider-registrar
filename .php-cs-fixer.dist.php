@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 $finder = PhpCsFixer\Finder::create()->in([
     'src',
@@ -41,11 +41,14 @@ return (new PhpCsFixer\Config())->setRules([
     ],
     'encoding' => true,
     'non_printable_character' => ['use_escape_sequences_in_strings' => true], // risky
+    'octal_notation' => true,
     'psr_autoloading' => true, // risky
     /*
      * Casing
      */
+    'class_reference_name_casing' => true,
     'constant_case' => ['case' => 'lower'],
+    'integer_literal_case' => true,
     'lowercase_keywords' => true,
     'lowercase_static_reference' => true,
     'magic_constant_casing' => true,
@@ -64,7 +67,8 @@ return (new PhpCsFixer\Config())->setRules([
     /*
      * Class Notation
      */
-    'class_attributes_separation' => ['elements' => ['const' => 'one', 'method' => 'one', 'property' => 'one']],
+    //'class_attributes_separation' => ['elements' => ['const' => 'one', 'method' => 'one', 'property' => 'one', 'trait_import' => 'none', 'case' => 'none']], // Not yet released
+    'class_attributes_separation' => ['elements' => ['const' => 'one', 'method' => 'one', 'property' => 'one', 'trait_import' => 'none']],
     'class_definition' => [
         'multi_line_extends_each_single_line' => false,
         'single_item_single_line' => false,
@@ -98,6 +102,7 @@ return (new PhpCsFixer\Config())->setRules([
     'multiline_comment_opening_closing' => true,
     'no_empty_comment' => true,
     'no_trailing_whitespace_in_comment' => true,
+    //'single_line_comment_spacing' => true, // not yet released
     'single_line_comment_style' => ['comment_types' => ['hash']],
     /*
      * Constant Notation
@@ -106,7 +111,10 @@ return (new PhpCsFixer\Config())->setRules([
     /*
      * Control structures
      */
+    'control_structure_continuation_position' => ['position' => 'same_line'],
     'elseif' => true,
+    'empty_loop_body' => ['style' => 'semicolon'],
+    'empty_loop_condition' => ['style' => 'while'],
     'include' => true,
     'no_alternative_syntax' => true,
     'no_break_comment' => true,
@@ -151,10 +159,12 @@ return (new PhpCsFixer\Config())->setRules([
         'strict' => true,
     ],
     'no_spaces_after_function_name' => true,
+    //'no_trailing_comma_in_singleline_function_call' => true, // Not yet released
     'no_unreachable_default_argument_value' => true,
     'no_useless_sprintf' => true,
     'nullable_type_declaration_for_default_null_value' => ['use_nullable_type_declaration' => true],
     'phpdoc_to_param_type' => false, // experimental, risky
+    'phpdoc_to_property_type' => false, // experimental, risky
     'phpdoc_to_return_type' => false, // experimental, risky
     'regular_callable_call' => true, // risky
     'return_type_declaration' => true,
@@ -169,6 +179,7 @@ return (new PhpCsFixer\Config())->setRules([
     'global_namespace_import' => ['import_constants' => false, 'import_functions' => true, 'import_classes' => true],
     'group_import' => false,
     'no_leading_import_slash' => true,
+    'no_unneeded_import_alias' => true,
     'no_unused_imports' => true,
     'ordered_imports' => ['sort_algorithm' => 'alpha', 'imports_order' => ['class', 'function', 'const']],
     'single_import_per_statement' => true,
@@ -180,6 +191,7 @@ return (new PhpCsFixer\Config())->setRules([
     'combine_consecutive_issets' => true,
     'combine_consecutive_unsets' => true,
     'declare_equal_normalize' => ['space' => 'none'],
+    'declare_parentheses' => true,
     'dir_constant' => true, // risky
     'error_suppression' => false,
     'explicit_indirect_variable' => true,
@@ -193,6 +205,7 @@ return (new PhpCsFixer\Config())->setRules([
             'pi',
         ],
     ], // risky
+    'get_class_to_class_keyword' => true, // risky
     'is_null' => true,
     'no_unset_on_property' => false, // risky
     'single_space_after_construct' => true,
@@ -215,15 +228,18 @@ return (new PhpCsFixer\Config())->setRules([
     /*
      * Operator
      */
-    'binary_operator_spaces' => ['default' => 'single_space', 'operators' => ['|' => 'no_space']],
+    'assign_null_coalescing_to_coalesce_equal' => true,
+    'binary_operator_spaces' => ['default' => 'single_space'],
     'concat_space' => ['spacing' => 'one'],
     'increment_style' => false,
     'logical_operators' => true,
     'new_with_braces' => true,
+    'no_space_around_double_colon' => true,
     'not_operator_with_space' => false,
     'not_operator_with_successor_space' => false,
+    'object_operator_without_whitespace' => true,
     'operator_linebreak' => ['only_booleans' => true, 'position' => 'beginning'],
-    'standardize_increment' => true,
+    'standardize_increment' => false,
     'standardize_not_equals' => true,
     'ternary_to_elvis_operator' => true, // risky
     'ternary_to_null_coalescing' => true,
@@ -231,10 +247,10 @@ return (new PhpCsFixer\Config())->setRules([
     /*
      * PHP Tag
      */
-    'blank_line_after_opening_tag' => true,
+    'blank_line_after_opening_tag' => false,
     'echo_tag_syntax' => false,
     'full_opening_tag' => true,
-    'linebreak_after_opening_tag' => true,
+    'linebreak_after_opening_tag' => false,
     'no_closing_tag' => true,
     /*
      * PHPUnit
@@ -326,7 +342,7 @@ return (new PhpCsFixer\Config())->setRules([
     /*
      * Strict
      */
-    'declare_strict_types' => false, // risky
+    'declare_strict_types' => true, // risky
     'strict_comparison' => false, // risky
     'strict_param' => false, // risky
     /*
@@ -339,6 +355,7 @@ return (new PhpCsFixer\Config())->setRules([
     'no_trailing_whitespace_in_string' => false, // risky
     'simple_to_complex_string_variable' => true,
     'single_quote' => true,
+    'string_length_to_empty' => true,
     'string_line_ending' => false, // risky
     /*
      * Whitespace
@@ -372,6 +389,7 @@ return (new PhpCsFixer\Config())->setRules([
     'no_trailing_whitespace' => true,
     'no_whitespace_in_blank_line' => true,
     'single_blank_line_at_eof' => true,
+    'types_spaces' => true,
 ])
     ->setRiskyAllowed(true)
     ->setFinder($finder);
